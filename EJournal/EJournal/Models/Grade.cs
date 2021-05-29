@@ -26,7 +26,7 @@ namespace EJournal.Models
         public string Value { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime GradeDate { get; set; }
 
         public Student Student { get; set; }
