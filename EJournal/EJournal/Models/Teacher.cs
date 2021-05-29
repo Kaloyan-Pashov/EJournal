@@ -28,6 +28,8 @@ namespace EJournal.Models
 
         [Required]
         [DataType(DataType.PhoneNumber)]
+        [StringLength(10)]
+        [RegularExpression("^[0-9]+$")]
         public string PhoneNum { get; set; }
     }
 }

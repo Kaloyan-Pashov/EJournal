@@ -27,6 +27,8 @@ namespace EJournal.Models
 
         [Required]
         [DataType(DataType.PhoneNumber)]
+        [StringLength(10)]
+        [RegularExpression("^[0-9]{10}$")]
         public string PhoneNum { get; set; }
 
         public ICollection<Grade> Grades;

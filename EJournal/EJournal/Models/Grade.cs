@@ -9,8 +9,9 @@ namespace EJournal.Models
 {
     public enum Value
     {
-        A, B, C, D, F
+        Otlichen=6, MnDobur=5, Dobur=4, Sreden=3, Slab2=2
     }
+   
     public class Grade
     {
         public int GradeID { get; set; }
