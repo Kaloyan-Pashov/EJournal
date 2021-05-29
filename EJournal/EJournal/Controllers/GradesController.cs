@@ -49,7 +49,7 @@ namespace EJournal.Controllers
         // GET: Grades/Create
         public IActionResult Create()
         {
-            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "EmailAddr");
+            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FullName");
             ViewData["SubjectID"] = new SelectList(_context.Subjects, "ID", "SubjectName");
             return View();
         }
@@ -67,7 +67,7 @@ namespace EJournal.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "EmailAddr", grade.StudentID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FullName",  grade.StudentID);
             ViewData["SubjectID"] = new SelectList(_context.Subjects, "ID", "SubjectName", grade.SubjectID);
             return View(grade);
         }
@@ -85,7 +85,7 @@ namespace EJournal.Controllers
             {
                 return NotFound();
             }
-            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "EmailAddr", grade.StudentID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FullName", grade.StudentID);
             ViewData["SubjectID"] = new SelectList(_context.Subjects, "ID", "SubjectName", grade.SubjectID);
             return View(grade);
         }
@@ -122,7 +122,7 @@ namespace EJournal.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "EmailAddr", grade.StudentID);
+            ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FullName", grade.StudentID);
             ViewData["SubjectID"] = new SelectList(_context.Subjects, "ID", "SubjectName", grade.SubjectID);
             return View(grade);
         }

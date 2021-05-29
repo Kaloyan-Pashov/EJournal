@@ -31,6 +31,15 @@ namespace EJournal.Models
         [RegularExpression("^[0-9]{10}$")]
         public string PhoneNum { get; set; }
 
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
         public ICollection<Grade> Grades;
 
     }
