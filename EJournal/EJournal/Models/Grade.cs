@@ -7,10 +7,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EJournal.Models
 {
-    public enum Value
-    {
-        Otlichen=6, MnDobur=5, Dobur=4, Sreden=3, Slab2=2
-    }
+    //public enum Value
+    //{
+    //    _6_=6, _5_=5, _4_=4, _3_=3, _2_=2
+    //}
    
     public class Grade
     {
@@ -18,8 +18,12 @@ namespace EJournal.Models
         public int StudentID { get; set; }
         public int SubjectID { get; set; }
 
-        [DisplayFormat(NullDisplayText = "No Grade")]
-        public Value? Value { get; set; }
+        //[DisplayFormat(NullDisplayText = "No Grade")]
+        //public Value? Value { get; set; }
+
+        [StringLength(1)]
+        [RegularExpression("^[2-6]+$")]
+        public string Value { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

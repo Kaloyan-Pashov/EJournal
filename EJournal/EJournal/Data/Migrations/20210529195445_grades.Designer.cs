@@ -4,14 +4,16 @@ using EJournal.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EJournal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210529195445_grades")]
+    partial class grades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,15 +31,17 @@ namespace EJournal.Data.Migrations
                     b.Property<DateTime>("GradeDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("GradeDec")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
                     b.Property<int>("SubjectID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Value")
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
+                    b.Property<int?>("Value")
+                        .HasColumnType("int");
 
                     b.HasKey("GradeID");
 
