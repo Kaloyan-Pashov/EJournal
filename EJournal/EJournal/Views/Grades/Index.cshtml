@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<EJournal.Models.Grade>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +10,10 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.IsInRole("Teacher"))
+    { 
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -28,26 +34,32 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GradeDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Student.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.GradeID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GradeID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GradeID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GradeDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.GradeID">Details</a> 
+                @if(User.IsInRole("Teacher"))
+                    { 
+                    <a asp-action="Edit" asp-route-id="@item.GradeID">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.GradeID">Delete</a>
+                    }
+
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

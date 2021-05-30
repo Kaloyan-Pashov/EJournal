@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EJournal.Data;
 using EJournal.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace EJournal.Controllers
 {
@@ -47,6 +49,7 @@ namespace EJournal.Controllers
         }
 
         // GET: Grades/Create
+       
         public IActionResult Create()
         {
             ViewData["StudentID"] = new SelectList(_context.Students, "ID", "FullName");
@@ -58,6 +61,7 @@ namespace EJournal.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("GradeID,StudentID,SubjectID,Value,GradeDate")] Grade grade)
         {
@@ -73,6 +77,7 @@ namespace EJournal.Controllers
         }
 
         // GET: Grades/Edit/5
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -94,6 +99,7 @@ namespace EJournal.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+       
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("GradeID,StudentID,SubjectID,Value,GradeDate")] Grade grade)
         {
@@ -128,6 +134,7 @@ namespace EJournal.Controllers
         }
 
         // GET: Grades/Delete/5
+      
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +157,7 @@ namespace EJournal.Controllers
         // POST: Grades/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var grade = await _context.Grades.FindAsync(id);
