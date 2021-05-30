@@ -3,10 +3,10 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Subjects";
 }
 
-<h1>Index</h1>
+<h1>Subjects</h1>
 @if (User.IsInRole("Teacher"))
 {
     <p>

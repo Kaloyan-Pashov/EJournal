@@ -1,28 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joan\\Documents\\GitHub\\EJournal\\EJournal\\EJournal\\EJournal.csproj": {}
+    "C:\\Users\\kaloy\\Desktop\\ejournal\\EJournal\\EJournal\\EJournal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joan\\Documents\\GitHub\\EJournal\\EJournal\\EJournal\\EJournal.csproj": {
+    "C:\\Users\\kaloy\\Desktop\\ejournal\\EJournal\\EJournal\\EJournal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joan\\Documents\\GitHub\\EJournal\\EJournal\\EJournal\\EJournal.csproj",
+        "projectUniqueName": "C:\\Users\\kaloy\\Desktop\\ejournal\\EJournal\\EJournal\\EJournal.csproj",
         "projectName": "EJournal",
-        "projectPath": "C:\\Users\\Joan\\Documents\\GitHub\\EJournal\\EJournal\\EJournal\\EJournal.csproj",
-        "packagesPath": "C:\\Users\\Joan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joan\\Documents\\GitHub\\EJournal\\EJournal\\EJournal\\obj\\",
+        "projectPath": "C:\\Users\\kaloy\\Desktop\\ejournal\\EJournal\\EJournal\\EJournal.csproj",
+        "packagesPath": "C:\\Users\\kaloy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kaloy\\Desktop\\ejournal\\EJournal\\EJournal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Joan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kaloy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
