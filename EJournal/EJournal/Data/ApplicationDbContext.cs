@@ -9,7 +9,7 @@ using EJournal.Models;
 
 namespace EJournal.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -20,5 +20,27 @@ namespace EJournal.Data
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            IdentityRole seeding;
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Name = "Teacher",
+                    NormalizedName = "TEACHER"
+                },
+                new IdentityRole
+                {
+                    Name = "Student",
+                    NormalizedName = "STUDENT"
+                }
+            );
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
+

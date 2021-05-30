@@ -4,14 +4,16 @@ using EJournal.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EJournal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210530020258_registerchanges1")]
+    partial class registerchanges1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,15 +234,15 @@ namespace EJournal.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2152f72a-644b-4d98-9531-2ef23d061d7e",
-                            ConcurrencyStamp = "edd75b40-c76b-457c-856b-a3542daacab8",
+                            Id = "a4a735e6-e063-4ed3-8ef4-c391418ef618",
+                            ConcurrencyStamp = "7bed1c4c-46a7-464c-acda-58c50df5de48",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
                         },
                         new
                         {
-                            Id = "2bbed1d6-404d-4d19-9686-45db40f26240",
-                            ConcurrencyStamp = "fb74d5b1-6828-4b7f-9e81-e3039fbcd154",
+                            Id = "43384554-7300-4119-a78e-2cd1ec585f9a",
+                            ConcurrencyStamp = "74c3e782-3edc-4bed-ba84-8862588e00d3",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         });
