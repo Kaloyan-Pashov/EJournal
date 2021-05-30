@@ -10,6 +10,7 @@ namespace EJournal.Models
     public class Student
     {
         public int ID { get; set; }
+        public int Number { get; set; }
 
         [Required]
         [StringLength(50)]

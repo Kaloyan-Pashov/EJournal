@@ -54,7 +54,7 @@ namespace EJournal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,EmailAddr,PhoneNum")] Student student)
+        public async Task<IActionResult> Create([Bind("ID,Number,FirstName,LastName,EmailAddr,PhoneNum")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace EJournal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,EmailAddr,PhoneNum")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Number,FirstName,LastName,EmailAddr,PhoneNum")] Student student)
         {
             if (id != student.ID)
             {
